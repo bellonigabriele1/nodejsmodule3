@@ -1,9 +1,11 @@
-const http = require('http');
-
 const express = require('express');
 
 const app = express(); 
 
-const server = http.createServer(app);
+app.use('/', (req, res, next) => {
+    console.log('in mw2');
+    res.send('<h1>hello</h1>');
+});
 
-server.listen(3000);
+app.listen(3000);
+
